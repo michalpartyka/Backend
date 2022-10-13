@@ -30,16 +30,17 @@ pipeline {
                 sh 'python3 -m pytest --cov=. --cov-report xml:test-results/coverage.xml --junitxml=test-results/pytest-report.xml'
             }
         }
-        /*stage('Sonarqube analysis') {
+        stage('Sonarqube analysis') {
             steps {
-                withSonarQubeEnv('SonarQube') {
+		echo "SonarQube is down"
+                /*withSonarQubeEnv('SonarQube') {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
                 timeout(time: 1, unit: 'MINUTES') {
                     waitForQualityGate abortPipeline: true
-                }
+                }*/
             }
-        }*/
+        }
         stage("docker build") {
             steps{
                 script {
