@@ -7,7 +7,7 @@ pipeline {
         label 'agent'
     }
     environment {
-	    def scannerHome = "SonarQube"
+	    scannerHome = tool 'SonarQube'
 
     }
     
