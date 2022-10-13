@@ -20,7 +20,8 @@ pipeline {
         }
         stage("download frontend") {
             steps {
-                git branch: 'main', url: 'https://github.com/michalpartyka/Backend.git'
+            	checkout scm		    
+                //git branch: 'main', url: 'https://github.com/michalpartyka/Backend.git'
             }
         }
         stage("display files") {
